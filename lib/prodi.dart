@@ -6,13 +6,14 @@ class Prodi{
   String akreditasi;
   String kaprodi;
   String lamanWebsite;
+  String email;
 
 
   List<Dosen> dosens;
   List<PrestasiMahasiswa> prestasiMahasiswa;
   List<Misi> misi;
 
-  Prodi(this.name, this.imageUrl, this.profile, this.visi, this.misi, this.akreditasi, this.kaprodi, this.lamanWebsite, this.prestasiMahasiswa, this.dosens);
+  Prodi(this.name, this.imageUrl, this.profile, this.visi, this.misi, this.akreditasi, this.kaprodi, this.lamanWebsite,this.email, this.prestasiMahasiswa, this.dosens);
 
   static List<Prodi> samples = [
     Prodi('S1-Agroteknologi', 
@@ -29,7 +30,8 @@ class Prodi{
       Misi('Menyelenggarakan kerjasama institusional dengan stakeholder baik di bidang Agroteknologi baik dalam dan luar negeri'),
     ], 'A', 
     'Dr. Ir. Bakti Wisnu Widjajani, M.P.', 
-    'https://agrotek.upnjatim.ac.id/', 
+    'https://agrotek.upnjatim.ac.id/',
+    'agrotek@upnjatim.ac.id', 
     [
       PrestasiMahasiswa('a'),
       PrestasiMahasiswa('a'),
@@ -93,6 +95,7 @@ class Prodi{
     ], 'A', 
     'Prof. DR. Ir. Syarif Imam Hidayat, M.M.', 
     'https://agribis.upnjatim.ac.id/', 
+    'agribisnis@upnjatim.ac.id',
     [
       PrestasiMahasiswa("Penguatan Pelaksanaan Agripreneur Digital dengan Mitra dalam Program Kompetisi Kampus Merdeka (PKKM) Magang dan Pelatihan Digital Marketing"),
       PrestasiMahasiswa("Program Studi Agribisnis UPN “Veteran” Jawa Timur Gelar “Agripreneur Digital Camp” Dorong Peningkatan Pemanfaatan Digital Marketing"),
@@ -139,7 +142,8 @@ class Prodi{
       Misi('Menyelenggarakan kerjasama institusional dengan stakeholder baik di bidang Agroteknologi baik dalam dan luar negeri'),
     ], 'A', 
     'Dr. Ir. Bakti Wisnu Widjajani, M.P.', 
-    'https://agrotek.upnjatim.ac.id/', 
+    'https://agrotek.upnjatim.ac.id/',
+    'agrotek@upnjatim.ac.id', 
     [
       PrestasiMahasiswa('a'),
       PrestasiMahasiswa('a'),
@@ -203,6 +207,7 @@ class Prodi{
     ], 'A', 
     'Prof. DR. Ir. Syarif Imam Hidayat, M.M.', 
     'https://agribis.upnjatim.ac.id/', 
+    'agribisnis@upnjatim.ac.id',
     [
       PrestasiMahasiswa("Penguatan Pelaksanaan Agripreneur Digital dengan Mitra dalam Program Kompetisi Kampus Merdeka (PKKM) Magang dan Pelatihan Digital Marketing"),
       PrestasiMahasiswa("Program Studi Agribisnis UPN “Veteran” Jawa Timur Gelar “Agripreneur Digital Camp” Dorong Peningkatan Pemanfaatan Digital Marketing"),
@@ -248,6 +253,7 @@ class Prodi{
     ], 'A', 
     'Prof. DR. Ir. Syarif Imam Hidayat, M.M.', 
     'https://agribis.upnjatim.ac.id/', 
+    'agribisnis@upnjatim.ac.id',
     [
       PrestasiMahasiswa("Penguatan Pelaksanaan Agripreneur Digital dengan Mitra dalam Program Kompetisi Kampus Merdeka (PKKM) Magang dan Pelatihan Digital Marketing"),
       PrestasiMahasiswa("Program Studi Agribisnis UPN “Veteran” Jawa Timur Gelar “Agripreneur Digital Camp” Dorong Peningkatan Pemanfaatan Digital Marketing"),

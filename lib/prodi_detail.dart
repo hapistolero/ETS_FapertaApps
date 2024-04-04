@@ -4,8 +4,11 @@ import 'prodi.dart';
 
 class ProdiDetail extends StatelessWidget {
   final Prodi prodi;
+  
+ 
 
   const ProdiDetail({Key? key, required this.prodi}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
@@ -109,13 +112,18 @@ class ProdiDetail extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Laman Website:',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
             GestureDetector(
               onTap: () async {
-                if (await canLaunch(prodi.lamanWebsite)) {
-                  await launch(prodi.lamanWebsite);
-                } else {
-                  throw 'Could not launch ${prodi.lamanWebsite}';
-                }
+                
+                  await _launchURL(prodi.lamanWebsite);
+               
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -125,6 +133,26 @@ class ProdiDetail extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Email:',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            GestureDetector(
+  onTap: () async {
+   
+    await _sendMail(prodi.email);
+  },
+  child: Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Text(
+      prodi.email,
+      style: TextStyle(fontSize: 16, color: Colors.blue),
+    ),
+  ),
+),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
@@ -170,4 +198,31 @@ class ProdiDetail extends StatelessWidget {
       ),
     );
   }
+
+  
 }
+_launchURL(String urlAddress) async {
+  final Uri url = Uri.parse(urlAddress);
+
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+}
+
+_sendMail(String emailAddress) async{
+ final Uri params = Uri(
+  scheme: 'mailto',
+  path: emailAddress,
+  query: 'subject=App Feedback&body=App Version 3.23', //add subject and body here
+);
+
+var url = params.toString();
+var u = Uri.parse(url);
+if (await canLaunchUrl(u)) {
+  await launchUrl(u);
+} else {
+  throw 'Could not launch $url';
+}
+
+}
+

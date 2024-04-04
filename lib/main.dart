@@ -100,10 +100,40 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return UserProfile(); // Ganti dengan nama widget untuk tampilan profil Anda
+                  },
+                ),
+              );
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/hapis.jpg'), // Ganti dengan path gambar profil Anda
+                  radius: 20,
+                ),
+                SizedBox(width: 8),
+                Text(
+                  'Hafiz Ilham Ardana',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
-
 
 Widget buildProdiCard(Prodi prodi) {
   return Card(
@@ -145,4 +175,31 @@ Widget buildProdiCard(Prodi prodi) {
       ),
     ),
   );
+}
+
+class UserProfile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profil Saya'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Nama: Hafiz Ilham Ardana'),
+            Text('TTL: Kediri, 25 Juni 2002'),
+            Text('Alamat: Karangrejo 7/25-G'),
+            Text('No. HP: +62 812-3398-0247'),
+            Text('Email: Ilhamhafiz2507@gmail.com'),
+            Text('Url Profil Github: https://github.com/hapistolero'),
+            Text('Riwayat Pendidikan:Sistem Informasi - UPN Veteran Jawa Timur'),
+            Text('Penghargaan: -'),
+          ],
+        ),
+      ),
+    );
+  }
 }
